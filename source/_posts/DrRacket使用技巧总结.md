@@ -33,3 +33,11 @@ max-two.scm
           (else (if (>= x z) z x))))
   (- (+ x y z) (min-three x y z)))
 ```
+
+## Window10安装sicp包
+
+7.1版本ui界面安装pkg报错cadr: contract violation，可以使用命令行安装，命令如下：
+
+```scheme
+raco pkg install --auto sicp
+```
