@@ -56,7 +56,8 @@ search:
 # Comment plugin settings (http://ppoffice.github.io/hexo-theme-icarus/categories/Configuration/Comment-Plugins)
 comment:
     # Name of the comment plugin
-    type:
+    type: disqus
+    shortname: pingao777
 # Share plugin settings (http://ppoffice.github.io/hexo-theme-icarus/categories/Configuration/Share-Plugins)
 share:
     # Share plugin name
