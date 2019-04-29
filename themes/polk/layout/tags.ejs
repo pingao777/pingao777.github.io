@@ -1,0 +1,32 @@
+<%- partial('_partial/header') %>
+<% if (page.path === "tags/index.html"){ %>
+    <div class="tags">
+        <%- tagcloud({
+            min_font: 14,
+            max_font: 30,
+            amount: 999,
+            color: true,
+            start_color: 'gray',
+            end_color: 'black',
+        }) %>
+    </div>
+    <style>
+
+        .tags {
+            max-width: 90%;
+            margin: 2em auto;
+            margin-top: 0em;
+        }
+        .tags a {
+            margin-right: 0.5em;
+            line-height: 2em;
+            white-space: nowrap;
+        }
+        .tags a:hover {
+            border-bottom: 1px solid black;
+            font-style: italic;
+            text-decoration: none;
+        }
+    </style>
+<% } %>
+<%- partial('_partial/footer') %>

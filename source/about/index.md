@@ -2,7 +2,7 @@ title: "About"
 layout: "page"
 ---
 
-### 项目：
+### 项目
 
 - [markdown-preview-sync](https://github.com/pingao777/markdown-preview-sync)：基于java的vim markdown预览插件
 - [Yiya](https://github.com/pingao777/Yiya)：无字典中文分词小程序，取“咿呀学语”之意

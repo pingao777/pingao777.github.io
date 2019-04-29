@@ -5,14 +5,11 @@ categories: 技术人生
 tags: [高水位线, Oracle, 数据库]
 ---
 高水位线(High Water Mark, HWM)类似于一个指针，用来标识分配给段(segment)的块(block)状态。块是Oracle中数据分配和操作的最小单位，段是类似于表、索引这样的数据库实体。块有下面几种状态：
-
 - 在HWM之上，块是未格式化和未使用的(unformated and unused)
 - 在HWM之下，块又有下面几种状态：
  - 分配的(allocated)，但是还未格式化
  - 格式化并且存有数据
  - 格式化但是没有数据，delete操作会造成这种状态
-
- <!--more-->
 
 另有一个低水位线的概念(Low HWM)，处于Low HWM之下的块都是格式化的，处于Low HWM和HWM之间有可能格式化也可能未格式化。
 示意图如下，
