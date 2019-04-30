@@ -41,3 +41,15 @@ max-two.scm
 ```scheme
 raco pkg install --auto sicp
 ```
+
+## 从Vim中运行scheme程序
+
+可以做如下配置：
+```scheme
+augroup scheme
+    autocmd!
+    " 加上<esc>可以避免弹出命令行必须按两次enter才能回到代码
+    autocmd filetype scheme nnoremap <F9> :w<cr>:! racket %<cr><esc>
+augroup end
+```
+这样直接按下`F9`就能运行了

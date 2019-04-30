@@ -1,7 +1,12 @@
 family-mono = "Hermit medium", "Microsoft YaHei", SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace
 @font-face {
     font-family: "Hermit medium";
-    src: url("../libs/hermit-medium.ttf");
+    src: url("../libs/hermit-medium.woff");
+}
+@font-face {
+    font-family: "maoti";
+    src:
+        url('../libs/maozedong.woff') format('woff');
 }
 
 body {
@@ -37,11 +42,12 @@ a {
 
     .logo {
       font-size: 2em;
+      font-family: "maoti";
       font-weight: bold;
     }
 
     .subtitle {
-      font-size: 14px;
+      font-size: 1em;
       color: gray;
     }
 

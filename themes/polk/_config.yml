@@ -14,6 +14,8 @@ rss: /atom.xml
 # SNS config
 sns:
   Blog: /archives
+  GitHub: https://github.com/pingao777
+  Steam: https://steamcommunity.com/profiles/76561198830472597
 
 # Nav menu
 menu:
