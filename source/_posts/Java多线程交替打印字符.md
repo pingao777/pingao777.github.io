@@ -1,5 +1,5 @@
 ---
-title: Java线程交替运行
+title: Java多线程交替打印字符
 date: 2019-06-05 10:13:15
 categories: 技术人生
 tags: [Java, 多线程]
@@ -17,17 +17,23 @@ tags: [Java, 多线程]
 
 > notifyAll: Wakes up all threads that are waiting on this object's monitor.
 
-由注释可以得知，wait将会让出锁，进入等待状态，直到其他线程调用notify或notifyAll。需要指出的是，这两个方法都必须在获取锁的状态下调用。
+根据Javadoc的注释，可以看出`wait`将会让出锁，进入`WAITING`状态，直到其他线程调用`notify(All)`，进入`AWAKENED`状态，在`wait`最终返回之前，需要获取锁。这意味着，`AWAKENED`的线程将和`BLOCKING`状态的线程一起竞争锁，如果竞争不过，继续待在`WAITING`状态。有几点需要注意：
 
-wait的使用范式如下：
+- 无论是`wait`，还是`notify(All)`，都必须在持有锁的状态下调用
+- `notify(All)`调用后不会释放锁，而是在离开`syntronized`区域后
+- `AWAKENED`线程在竞争锁时没有任何优势，和`BLOCKING`线程优先级一样
+
+`wait`的使用范式如下：
 
 ```java
 synchronized (obj) {
    while (<condition does not hold>)
-       obj.wait(timeout);
+       obj.wait();
    ... // Perform action appropriate to condition
 }
 ```
+
+之所以使用循环条件判断，是为了防止线程**过早唤醒**，也就是发出`notify(All)`时条件谓词为真，到`wait`返回时，谓词不为真了。另外Javadoc指出，`WAITING`线程会有一定的几率自己醒来，而不是收到`notify(All)`的通知，虽然这极少发生。
 
 回到最初的问题，可以启动两个线程，为他们分配一个名字`name`，分别为A和B，设置一个变量`ticket`保存着下一个可运行的线程名，只有`name == ticket`的线程才有权运行，这样只要改变`ticket`的值就可以控制线程的运行了，具体代码如下：
 
