@@ -114,7 +114,16 @@ opam user-setup install
 ```shell
 code .
 ```
-这时候会打开vscode，就像在Windows中打开一样。安装插件OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl的。还有一个Code Runner插件可以方便的运行单文件程序，推荐大家装一下。使用Code Runner运行Ocaml的示例如下：
+这时候会打开vscode，就像在Windows中打开一样。安装插件OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl的。要在settings.json中配置一下这个插件。
+```json
+"ocaml.merlinPath": "/home/用户/.opam/default/bin/ocamlmerlin",
+"reason.path.ocamlmerlin": "/home/用户/.opam/default/bin/ocamlmerlin",
+"ocaml.ocpPath": "/home/用户/.opam/default/bin/ocp-indent",
+"reason.path.ocpindent": "/home/用户/.opam/default/bin/ocp-indent",
+"editor.formatOnType": true,
+"reason.codelens.enabled": true
+```
+还有一个Code Runner插件可以方便的运行单文件程序，推荐大家装一下。使用Code Runner运行Ocaml的示例如下：
 
 ![vscode](vscode.png)
 
