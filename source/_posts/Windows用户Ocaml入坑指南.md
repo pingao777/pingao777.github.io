@@ -114,7 +114,9 @@ opam user-setup install
 ```shell
 code .
 ```
-这时候会打开vscode，就像在Windows中打开一样。安装插件OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl的。还有一个Code Runner插件可以方便的运行单文件程序，推荐大家装一下。
+这时候会打开vscode，就像在Windows中打开一样。安装插件OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl的。还有一个Code Runner插件可以方便的运行单文件程序，推荐大家装一下。使用Code Runner运行Ocaml的示例如下：
+
+![vscode](vscode.png)
 
 最后一步了，大家加油！新建一个文件`test.ml`，将开头的那段Ocaml代码拷进去，新建另一个文件`dune`，输入下面的内容：
 ```ocaml
