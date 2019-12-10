@@ -109,21 +109,29 @@ opam install merlin
 opam user-setup install
 opam install ocp-indent
 opam user-setup install
+opam install utop
 ```
 这些都成功后下载vscode，在Windows上安装，完成后回到Linux执行下面的命令：
 ```shell
 code .
 ```
-这时候会打开vscode，就像在Windows中打开一样。安装插件OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl的。要在settings.json中配置一下这个插件。
+下面推荐一下几个插件：
+- OCaml and Reason IDE，注意还有一个插件叫OCaml and Reason IDE For Wsl，选那个不带For Wsl
+- Code Runner插件可以方便的运行单文件程序，推荐大家装一下。
+- ocaml-reason-format，用来格式化代码，OCaml and Reason IDE本身的格式化不太好。
+
+最终的settings.json如下：
 ```json
-"ocaml.merlinPath": "/home/用户/.opam/default/bin/ocamlmerlin",
-"reason.path.ocamlmerlin": "/home/用户/.opam/default/bin/ocamlmerlin",
-"ocaml.ocpPath": "/home/用户/.opam/default/bin/ocp-indent",
-"reason.path.ocpindent": "/home/用户/.opam/default/bin/ocp-indent",
+"editor.fontSize": 18,
+"reason.path.ocamlmerlin": "/home/user/.opam/default/bin/ocamlmerlin",
+"reason.path.ocpindent": "/home/user/.opam/default/bin/ocp-indent",
 "editor.formatOnType": true,
-"reason.codelens.enabled": true
+"reason.codelens.enabled": false,  // 不显示类型提示
+"ocaml-reason-format.ocamlformat": "/home/user/.opam/default/bin/ocamlformat",
+"[ocaml]": {
+    "editor.defaultFormatter": "rustykey.vscode-ocaml-reason-format"
+},
 ```
-还有一个Code Runner插件可以方便的运行单文件程序，推荐大家装一下。使用Code Runner运行Ocaml的示例如下：
 
 ![vscode](vscode.png)
 
