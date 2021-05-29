@@ -186,6 +186,9 @@ a {
 .post .post-content {
   text-align: justify;
 }
+.post .post-content a {
+  color: #0065b3;
+}
 .post .post-content a:hover {
   border-bottom: 1px solid;
 }
